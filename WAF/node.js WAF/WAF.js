@@ -1,5 +1,8 @@
 var fs= require("fs");
 
+
+// level 1 只记录流量
+// level 2 对关键词进行过滤S
 var level = 2;
 
 var Filter = [
