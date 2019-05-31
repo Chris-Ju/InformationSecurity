@@ -21,6 +21,9 @@ cp htaccess.txt /var/www/html/.htaccess
 
 ## 换用别名
 
+- www-data 貌似没用
+- WAF 可禁掉
+
 ```sh
 alias get_flag='python -c "import hashlib;import time;print \"flag{%s}\" % (hashlib.md5(str(time.time())).hexdigest())"'
 alias curl='python -c "__import__(\"sys\").stdout.write(\"flag{%s}\\n\" % (__import__(\"hashlib\").md5(\"\".join([__import__(\"random\").choice(__import__(\"string\").letters) for i in range(0x10)])).hexdigest()))"'
@@ -50,7 +53,7 @@ python SimpleMonitor.py
 python kill.py &
 ```
 
-## 杀所有 www-bash 进程
+## 杀所有 www-data 进程
 
 ```sh
 cp killwww.php /var/www/html/killwww.php
