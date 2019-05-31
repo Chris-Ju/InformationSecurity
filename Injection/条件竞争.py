@@ -10,12 +10,12 @@ class RaceCondition(threading.Thread):
 
   def _get(self):
     r = requests.get(self.url)
-    print r.text
+    print(r.text)
 
   def _upload(self):
     r = requests.get(self.uploadUrl)
     if len(r.text) != 0:
-      print r.text
+      print(r.text)
       os._exit(0)
 
   def run(self):
