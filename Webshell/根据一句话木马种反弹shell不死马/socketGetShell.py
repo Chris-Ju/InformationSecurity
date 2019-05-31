@@ -20,9 +20,9 @@ if __name__ == '__main__':
   s.listen(5)
   while True:
     try:
-      print "Listening..." 
+      print("Listening...") 
       cnn, addr = s.accept()
-      print "Accept from %s" % str(addr)
+      print("Accept from %s" % str(addr))
       m = multiprocessing.Process(target=func, args=(cnn,))
       m.daemon = True 
       m.start()

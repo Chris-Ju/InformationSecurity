@@ -19,9 +19,9 @@ def UploadFile(url, passwd):
 def TouchFile(url):
   try:
     res = requests.get(url, timeout=2)
-    print res.text
+    print(res.text)
   except:
-    print v_ip, "Success!"
+    print(v_ip, "Success!")
 
 if __name__ == "__main__":
   UploadFile(v_ip, p)
